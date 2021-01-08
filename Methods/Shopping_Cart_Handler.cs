@@ -112,10 +112,19 @@ namespace Session.Methods
 
         public HttpStatusCode decrease_item_from_cart(JObject obj, String item_name)
         {
+          
+            if (obj == null)
+            {
+                message = "No session id was found in the header";
+                statuscode = "Error";
+                return HttpStatusCode.NotFound;
+            }
             var data = Load_Cart_Data();
             var checksessionid = data.Find(p => p.session_id == obj.Value<String>("session_id"));
             if (checksessionid == null)
             {
+                statuscode = "Error";
+                message = "Session id does not match.Please try again";
                 return HttpStatusCode.NotFound;
             }
             else
