@@ -149,6 +149,8 @@ namespace Session.Methods
                 else
                 {
                     remove_product_when_zero(obj.Value<String>("session_id"));
+                    statuscode = "Decreased";
+                    message = "Item decremented from cart";
                     return HttpStatusCode.OK;
                 }
             }
