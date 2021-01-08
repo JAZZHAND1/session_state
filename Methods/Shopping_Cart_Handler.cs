@@ -149,8 +149,6 @@ namespace Session.Methods
                 else
                 {
                     remove_product_when_zero(obj.Value<String>("session_id"));
-                    statuscode = "Decreased";
-                    message = "Item decremented from cart";
                     return HttpStatusCode.OK;
                 }
             }
@@ -166,6 +164,8 @@ namespace Session.Methods
                 if (p.amount == 0)
                 {
                     checksessionid.removeproduct(p);
+                    statuscode = "Decreased";
+                    message = "Item decremented from cart";
                     Save_Cart_Data(data);
                   
                  break;
