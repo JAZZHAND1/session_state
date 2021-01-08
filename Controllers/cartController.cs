@@ -52,11 +52,9 @@ namespace Session.Controllers
         [HttpGet]
         public HttpResponseMessage GetCard()
         {
-           
-        return Request.CreateResponse(HttpStatusCode.OK, handler.get_cart());
+            return Request.CreateResponse(HttpStatusCode.OK, handler.get_cart());
             
-                     
-       }
+        }
 
 
         [Route("cart/decrease/{item_name}")]

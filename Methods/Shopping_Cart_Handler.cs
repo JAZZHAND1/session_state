@@ -140,7 +140,7 @@ namespace Session.Methods
                         break;
                     }
                 }
-                if (flag == 0)
+                if (flag == 1)
                 {
                     statuscode = "Decreased";
                     message = "Item decremented from cart";

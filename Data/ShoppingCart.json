@@ -1,16 +1,7 @@
 [
   {
     "session_id": "57e2bf5a-043c-4c70-a805-6336209fed81",
-    "product": [
-      {
-        "item_name": "Hello",
-        "amount": 1
-      },
-      {
-        "item_name": "cricketbat",
-        "amount": 3
-      }
-    ]
+    "product": []
   },
   {
     "session_id": "6c2f6696-88e4-4f73-9954-7faef9888bd7",
@@ -48,7 +39,7 @@
     "product": [
       {
         "item_name": "television",
-        "amount": 2
+        "amount": 1
       }
     ]
   },
@@ -99,5 +90,14 @@
   {
     "session_id": "ad56d170-8814-42f1-a6a9-ff96ce12c144",
     "product": []
+  },
+  {
+    "session_id": "95a122ba-783d-4933-b215-cb996e8546ed",
+    "product": [
+      {
+        "item_name": "rafid",
+        "amount": 1
+      }
+    ]
   }
 ]
