@@ -52,7 +52,16 @@ namespace Session.Controllers
         [HttpGet]
         public HttpResponseMessage GetCard()
         {
-            return Request.CreateResponse(HttpStatusCode.OK, handler.get_cart());
+            try
+            {
+                List<string> list = new List<string>(Request.Headers.GetValues("session_id"));
+                String session_id = list[0];
+                return Request.CreateResponse(HttpStatusCode.OK, handler.get_cart(session_id));
+            }
+            catch(Exception e)
+            {
+                return Request.CreateResponse(HttpStatusCode.OK,obj);
+            }
             
         }
 

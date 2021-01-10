@@ -22,6 +22,10 @@
       {
         "item_name": "stump",
         "amount": 2
+      },
+      {
+        "item_name": "television",
+        "amount": 1
       }
     ]
   },

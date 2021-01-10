@@ -39,10 +39,11 @@ namespace Session.Methods
            Jsonobject[statuscode]=message;
            return Jsonobject;
         }
-        public List<ShoppingCart> get_cart()
+        public List<Product> get_cart(string session_id)
         {
             carts = Load_Cart_Data();
-            return carts;
+            var result = carts.Find(p => p.session_id == session_id);
+            return result.product;
         }
 
         public HttpStatusCode add_item_to_cart(JObject obj,String item_name)
