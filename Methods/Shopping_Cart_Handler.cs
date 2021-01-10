@@ -17,6 +17,7 @@ namespace Session.Methods
         JObject Jsonobject = new JObject();
         String statuscode="";
         String message = "";
+        String session_id = "";
         List<ShoppingCart> carts = new List<ShoppingCart>();
         public List<ShoppingCart> Load_Cart_Data()
         {
@@ -34,10 +35,14 @@ namespace Session.Methods
             var dataString = JsonConvert.SerializeObject(data, Formatting.Indented);
             File.WriteAllText(@"D:\Books\3-2\Software Design and Architechture\Microservice\Session\Data\ShoppingCart.json", dataString);
         }
-        public JObject return_session_id()
+        public JObject return_message()
         {
            Jsonobject[statuscode]=message;
            return Jsonobject;
+        }
+        public String return_session_id()
+        {
+            return session_id;
         }
         public List<Product> get_cart(string session_id)
         {
@@ -60,8 +65,9 @@ namespace Session.Methods
                 cart.product.Add(product);
                 data.Add(cart);
                 Save_Cart_Data(data);
-                message = cart.getsessionid();
-                statuscode = "session_id";
+                session_id = cart.getsessionid();
+                statuscode = "Successful";
+                message = "Item added to cart";
                 return HttpStatusCode.OK;
             } 
             else
@@ -145,11 +151,13 @@ namespace Session.Methods
                 {
                     statuscode = "Decreased";
                     message = "Item decremented from cart";
+                    remove_product_when_zero(obj.Value<String>("session_id"));
                     return HttpStatusCode.OK;
                 }
                 else
                 {
-                    remove_product_when_zero(obj.Value<String>("session_id"));
+                    statuscode = "Error";
+                    message = "Item not found";
                     return HttpStatusCode.OK;
                 }
             }
