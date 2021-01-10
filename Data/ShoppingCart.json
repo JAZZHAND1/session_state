@@ -35,11 +35,6 @@
   },
   {
     "session_id": "c0980c20-57fc-4920-bc06-e46e7e8f9c3a",
-    "product": [
-      {
-        "item_name": "movieticket",
-        "amount": 1
-      }
-    ]
+    "product": []
   }
 ]
