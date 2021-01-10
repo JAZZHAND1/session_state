@@ -33,15 +33,23 @@ namespace Session.Controllers
            
             try
             {
-                List<string> list = new List<string>(Request.Headers.GetValues("session_id"));
+                List<string> list = new List<string>(Request.Headers.GetValues("session-id"));
                 obj["session_id"] = list[0];
                 HttpStatusCode code = handler.add_item_to_cart(obj, item_name);
-                return Request.CreateResponse(code, handler.return_session_id());
+                var response= Request.CreateResponse(code, handler.return_message());
+                if (handler.return_session_id()!="")
+                {
+                    response.Headers.Add("session-id",handler.return_session_id());
+                }
+                
+                return response;
             }
             catch(Exception E) {
                 obj = null;
                 HttpStatusCode code = handler.add_item_to_cart(obj, item_name);
-                return Request.CreateResponse(code, handler.return_session_id());
+                var response = Request.CreateResponse(code, handler.return_message());
+                response.Headers.Add("session-id", handler.return_session_id());
+                return response;
 
             }
                              
@@ -54,7 +62,7 @@ namespace Session.Controllers
         {
             try
             {
-                List<string> list = new List<string>(Request.Headers.GetValues("session_id"));
+                List<string> list = new List<string>(Request.Headers.GetValues("session-id"));
                 String session_id = list[0];
                 return Request.CreateResponse(HttpStatusCode.OK, handler.get_cart(session_id));
             }
@@ -71,16 +79,16 @@ namespace Session.Controllers
         public HttpResponseMessage decrease_item_from_cart(String item_name)
         {
             try {
-                List<string> list = new List<string>(Request.Headers.GetValues("session_id"));
+                List<string> list = new List<string>(Request.Headers.GetValues("session-id"));
                 obj["session_id"] = list[0];
                 HttpStatusCode code = handler.decrease_item_from_cart(obj, item_name);
-                return Request.CreateResponse(code, handler.return_session_id());
+                return Request.CreateResponse(code, handler.return_message());
             }
             catch(Exception e)
             {
                 obj = null;
                 HttpStatusCode code = handler.decrease_item_from_cart(obj, item_name);
-                return Request.CreateResponse(code, handler.return_session_id());
+                return Request.CreateResponse(code, handler.return_message());
             }
             
 
@@ -92,16 +100,16 @@ namespace Session.Controllers
         {
             try
             {
-                List<string> list = new List<string>(Request.Headers.GetValues("session_id"));
+                List<string> list = new List<string>(Request.Headers.GetValues("session-id"));
                 obj["session_id"] = list[0];
                 HttpStatusCode code = handler.remove_item_from_cart(obj, item_name);
-                return Request.CreateResponse(code, handler.return_session_id());
+                return Request.CreateResponse(code, handler.return_message());
             }
             catch(Exception e)
             {
                 obj = null;
                 HttpStatusCode code = handler.remove_item_from_cart(obj, item_name);
-                return Request.CreateResponse(code, handler.return_session_id());
+                return Request.CreateResponse(code, handler.return_message());
             }
             
         }

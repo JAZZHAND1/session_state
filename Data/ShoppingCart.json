@@ -26,80 +26,18 @@
       {
         "item_name": "television",
         "amount": 1
-      }
-    ]
-  },
-  {
-    "session_id": "b76ffe3e-92a3-4875-aeff-b248258cbf6c",
-    "product": [
+      },
       {
-        "item_name": "mobile",
+        "item_name": "bowlingpin",
         "amount": 1
       }
     ]
   },
   {
-    "session_id": "7e4e3d03-83ad-4ac3-afad-0fec3a6bf05d",
+    "session_id": "c0980c20-57fc-4920-bc06-e46e7e8f9c3a",
     "product": [
       {
-        "item_name": "television",
-        "amount": 1
-      }
-    ]
-  },
-  {
-    "session_id": "49007c46-d944-4590-a96c-55c42892daaa",
-    "product": []
-  },
-  {
-    "session_id": "78af51cb-3730-4063-a374-534f6f24ded1",
-    "product": []
-  },
-  {
-    "session_id": "f08d28ba-e8a4-4b41-95de-175e528c05e0",
-    "product": [
-      {
-        "item_name": "yes",
-        "amount": 1
-      }
-    ]
-  },
-  {
-    "session_id": "954f73bb-b523-49b9-b846-1f566c1202e9",
-    "product": [
-      {
-        "item_name": "yes",
-        "amount": 1
-      }
-    ]
-  },
-  {
-    "session_id": "081dbec8-4cd6-43f2-a1ee-2a7268344faf",
-    "product": [
-      {
-        "item_name": "cricketbat",
-        "amount": 1
-      }
-    ]
-  },
-  {
-    "session_id": "022b6a3b-2fff-4ad5-b8ab-94893748d676",
-    "product": [
-      {
-        "item_name": "cricketbat",
-        "amount": 1
-      }
-    ]
-  },
-  {
-    "session_id": "ad56d170-8814-42f1-a6a9-ff96ce12c144",
-    "product": []
-  },
-  {
-    "session_id": "95a122ba-783d-4933-b215-cb996e8546ed",
-    "product": [
-      {
-        "item_name": "rafid",
+        "item_name": "movieticket",
         "amount": 1
       }
     ]
